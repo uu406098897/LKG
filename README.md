@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>中国金隆之窗</title>
     <style>
+        /* 基础样式 */
         body {
             margin: 0;
             font-family: '微软雅黑', sans-serif;
@@ -165,6 +166,8 @@
                 <li><a href="#profile">个人简介</a></li>
                 <li><a href="#skills">核心能力</a></li>
                 <li><a href="#projects">项目成果</a></li>
+                <li><a href="#gallery">作品展示</a></li>
+                <li><a href="#resources">资源推荐</a></li>
             </ul>
         </nav>
     </header>
@@ -173,10 +176,10 @@
         <aside class="sidebar">
             <div class="news-scroll">
                 <ul>
-                    <li><a href="http://example.com/pm" target="_blank">🔥 2025年项目管理趋势报告发布</a></li>
-                    <li><a href="http://example.com/agile" target="_blank">🌟 敏捷开发与项目管理结合新方法</a></li>
-                    <li><a href="http://example.com/remote" target="_blank">🚀 远程团队管理工具推荐</a></li>
-                    <li><a href="http://example.com/risk" target="_blank">⚠️ 项目风险管理最佳实践</a></li>
+                    <li><a href="https://example.com/pm" target="_blank">🔥 2025年项目管理趋势报告发布</a></li>
+                    <li><a href="https://example.com/agile" target="_blank">🌟 敏捷开发与项目管理结合新方法</a></li>
+                    <li><a href="https://example.com/remote" target="_blank">🚀 远程团队管理工具推荐</a></li>
+                    <li><a href="https://example.com/risk" target="_blank">⚠️ 项目风险管理最佳实践</a></li>
                 </ul>
             </div>
             <div class="weather-module">
@@ -188,25 +191,22 @@
         </aside>
         <!-- 主内容区 -->
         <main style="flex-grow: 1;">
-            <!-- 个人简介模块 -->
+            <!-- 模块1：个人简介 -->
             <div class="content-block" id="profile">
                 <h2>个人简介</h2>
                 <div class="featured-grid">
                     <div class="featured-item">
-                        <img src="https://picsum.photos/800/400?grayscale" alt="专业形象照">
+                        <img src="https://picsum.photos/id/1018/800/400" alt="专业形象照">
                         <h3>金隆 | 项目管理专家</h3>
                         <p>🔹 大连工业大学艺术设计硕士<br>
                            🔹 国家级项目管理认证（PMP）<br>
                            🔹 艺术设计与项目管理领域专家<br>
                            🔹 10年项目管理与团队协作经验</p>
                     </div>
-                    <div class="featured-item">
-                        <h3>专业领域</h3>
-                        <p>项目规划与执行 | 团队协作与沟通 | 风险管理 | 时间与成本控制 | 设计项目交付</p>
-                    </div>
                 </div>
             </div>
-            <!-- 核心能力模块 -->
+
+            <!-- 模块2：核心能力 -->
             <div class="content-block" id="skills">
                 <h2>核心能力</h2>
                 <div class="featured-grid">
@@ -224,23 +224,73 @@
                     </div>
                 </div>
             </div>
-            <!-- 项目成果模块 -->
+
+            <!-- 模块3：项目成果 -->
             <div class="content-block" id="projects">
                 <h2>代表项目</h2>
                 <div class="featured-grid">
                     <div class="featured-item">
-                        <img src="https://picsum.photos/800/400?tech" alt="智慧城市项目">
+                        <img src="https://picsum.photos/id/1015/800/400" alt="展览设计项目">
                         <h3>大型展览设计项目</h3>
                         <p>• 项目周期：2022-2023<br>
                            • 核心技术：项目管理+设计创新<br>
                            • 成效：客户满意度达95%</p>
                     </div>
                     <div class="featured-item">
-                        <img src="https://picsum.photos/800/400?ai" alt="医疗AI项目">
+                        <img src="https://picsum.photos/id/1025/800/400" alt="品牌重塑项目">
                         <h3>品牌重塑项目</h3>
                         <p>• 客户：某知名快消品牌<br>
                            • 目标：品牌形象升级<br>
                            • 成果：销售额增长20%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模块4：作品展示 -->
+            <div class="content-block" id="gallery">
+                <h2>作品展示</h2>
+                <div class="featured-grid">
+                    <div class="featured-item">
+                        <img src="https://picsum.photos/id/1035/800/400" alt="艺术作品1">
+                        <h3>艺术作品1</h3>
+                        <p>描述：现代风格的艺术设计作品。</p>
+                    </div>
+                    <div class="featured-item">
+                        <img src="https://picsum.photos/id/1045/800/400" alt="艺术作品2">
+                        <h3>艺术作品2</h3>
+                        <p>描述：简约风格的设计案例。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模块5：资源推荐 -->
+            <div class="content-block" id="resources">
+                <h2>资源推荐</h2>
+                <div class="featured-grid">
+                    <div class="featured-item">
+                        <h3>📚 书籍推荐</h3>
+                        <p>《敏捷项目管理》 - 作者：XXX</p>
+                    </div>
+                    <div class="featured-item">
+                        <h3>🔗 在线课程</h3>
+                        <p>《项目管理基础》 - 平台：Coursera</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 其他模块 -->
+            <div class="content-block">
+                <h2>其他模块</h2>
+                <div class="featured-grid">
+                    <div class="featured-item">
+                        <img src="https://picsum.photos/id/1055/800/400" alt="自然风光">
+                        <h3>自然风光</h3>
+                        <p>描述：美丽的自然景观摄影作品。</p>
+                    </div>
+                    <div class="featured-item">
+                        <img src="https://picsum.photos/id/1065/800/400" alt="城市建筑">
+                        <h3>城市建筑</h3>
+                        <p>描述：现代城市的建筑设计。</p>
                     </div>
                 </div>
             </div>
@@ -249,7 +299,7 @@
     <footer>
         <p>© 2025 中国金隆创新研究院 版权所有</p>
         <p>学术合作：research@jinlong.cn | 媒体联络：press@jinlong.cn</p>
-        <p>地址：浙江省杭州市西湖区云启中心A座</p>
+        <p>地址：北京市海淀区人工智能产业园A座</p>
     </footer>
 </body>
 </html>
