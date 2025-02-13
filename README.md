@@ -97,15 +97,15 @@
 <body>
     <div class="container">
         <header>
-            <h1>中国金隆 - 个人信息港</h1>
+            <h1>中国金隆之窗</h1>
             <nav>
                 <ul>
-                    <li><a href="#profile">个人简介</a></li>
-                    <li><a href="#worklife">工作生活</a></li>
+                    <li><a href="#profile">金隆简介</a></li>
+                    <li><a href="#worklife">金隆动态</a></li>
                     <li><a href="#honor">个人荣誉</a></li>
-                    <li><a href="#dynamic">工作动态</a></li>
+                    <li><a href="#dynamic">工作生活</a></li>
                     <li><a href="#news">今日要闻</a></li>
-                    <li><a href="#knowledge">个人知识</a></li>
+                    <li><a href="#knowledge">知识信息</a></li>
                 </ul>
             </nav>
         </header>
