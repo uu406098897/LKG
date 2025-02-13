@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中国金隆 - 个人信息港</title>
+    <title>中国金隆之窗</title>
     <style>
         body {
             margin: 0;
@@ -14,6 +13,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            box-sizing: border-box;
         }
         header {
             background: #333;
@@ -37,31 +37,30 @@
             font-weight: bold;
         }
         .content-block {
-            margin: 40px 0;
+            margin: 20px 0;
         }
         .news-scroll {
-            height: 80px;
+            height: 40px;
             overflow: hidden;
-            position: relative;
+            white-space: nowrap;
             border: 1px solid #ddd;
             padding: 10px;
-            margin-top: 30px;
+            margin: 10px 0;
         }
         .news-scroll ul {
-            position: absolute;
-            animation: scroll 15s linear infinite;
+            display: inline-block;
+            animation: scroll 30s linear infinite;
             padding: 0;
             margin: 0;
             list-style: none;
         }
         .news-scroll li {
-            height: 30px;
-            line-height: 30px;
-            margin: 0 0 10px 0;
+            display: inline-block;
+            margin-right: 20px;
         }
         @keyframes scroll {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-100%); }
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
         footer {
             background: #f8f8f8;
@@ -72,21 +71,26 @@
         }
         .featured-item {
             border: 1px solid #ddd;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 10px;
+            margin-bottom: 10px;
             border-radius: 8px;
+            width: calc(33.33% - 10px);
+            float: left;
+            margin-right: 10px;
+        }
+        .featured-item:nth-child(3n) {
+            margin-right: 0;
         }
         .featured-item img {
             width: 100%;
-            height: 200px;
+            height: 150px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
         .article-block {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            overflow: hidden;
+            clear: both;
         }
     </style>
 </head>
@@ -106,6 +110,19 @@
             </nav>
         </header>
         
+        <div class="news-scroll" id="news">
+            <h2>今日要闻</h2>
+            <div class="scroll-container">
+                <ul>
+                    <li><a href="https://example.com/news1">新闻1：行业动态更新</a></li>
+                    <li><a href="https://example.com/news2">新闻2：技术进展分享</a></li>
+                    <li><a href="https://example.com/news3">新闻3：行业新政策发布</a></li>
+                    <li><a href="https://example.com/news4">新闻4：行业新技术应用</a></li>
+                    <li><a href="https://example.com/news5">新闻5：行业新趋势解读</a></li>
+                </ul>
+            </div>
+        </div>
+        
         <main>
             <div class="content-block" id="profile">
                 <h2>个人简介</h2>
@@ -118,39 +135,58 @@
             
             <div class="content-block" id="worklife">
                 <h2>工作生活</h2>
-                <div class="featured-item">
-                    <img src="https://picsum.photos/800/400?random=1" alt="工作生活照">
-                    <h3>工作日常</h3>
-                    <p>在工作中，我专注于[工作领域]，努力提升专业能力，为工作做出贡献。</p>
+                <div class="article-block">
+                    <div class="featured-item">
+                        <img src="https://picsum.photos/800/400?random=1" alt="工作生活照">
+                        <h3>工作日常</h3>
+                        <p>在工作中，我专注于[工作领域]，努力提升专业能力，为工作做出贡献。</p>
+                    </div>
+                    <div class="featured-item">
+                        <img src="https://picsum.photos/800/400?random=2" alt="工作生活照">
+                        <h3>生活点滴</h3>
+                        <p>在生活中，我喜欢阅读和旅行，这些经历使我不断成长和进步。</p>
+                    </div>
+                    <div class="featured-item">
+                        <img src="https://picsum.photos/800/400?random=3" alt="工作生活照">
+                        <h3>团队合作</h3>
+                        <p>我相信团队的力量，与同事携手共同完成项目，创造更多价值。</p>
+                    </div>
                 </div>
             </div>
             
             <div class="content-block" id="honor">
                 <h2>个人荣誉</h2>
-                <div class="featured-item">
-                    <h3>2025年度行业创新奖</h3>
-                    <p>在[项目名称]项目中，凭借出色的创新能力和专业技能，荣获2025年度行业创新奖。</p>
+                <div class="article-block">
+                    <div class="featured-item">
+                        <h3>2025年度行业创新奖</h3>
+                        <p>在[项目名称]项目中，凭借出色的创新能力和专业技能，荣获2025年度行业创新奖。</p>
+                    </div>
+                    <div class="featured-item">
+                        <h3>2024年度优秀员工</h3>
+                        <p>在公司评选中，被评为2024年度优秀员工，为公司的发展做出突出贡献。</p>
+                    </div>
+                    <div class="featured-item">
+                        <h3>2023年度优秀论文奖</h3>
+                        <p>撰写的论文《[论文标题]》在行业学术会议中荣获2023年度优秀论文奖。</p>
+                    </div>
                 </div>
             </div>
             
             <div class="content-block" id="dynamic">
                 <h2>工作动态</h2>
-                <div class="featured-item">
-                    <h3>参与[项目名称]项目</h3>
-                    <p>目前正参与[项目名称]项目的开发工作，该项目旨在[项目目标]。</p>
-                </div>
-            </div>
-            
-            <div class="news-scroll" id="news">
-                <h2>今日要闻</h2>
-                <div class="scroll-container">
-                    <ul>
-                        <li><a href="https://example.com/news1">新闻1：行业动态更新</a></li>
-                        <li><a href="https://example.com/news2">新闻2：技术进展分享</a></li>
-                        <li><a href="https://example.com/news3">新闻3：行业新政策发布</a></li>
-                        <li><a href="https://example.com/news4">新闻4：行业新技术应用</a></li>
-                        <li><a href="https://example.com/news5">新闻5：行业新趋势解读</a></li>
-                    </ul>
+                <div class="article-block">
+                    <div class="featured-item">
+                        <h3>参与[项目名称]项目</h3>
+                        <p>目前正参与[项目名称]项目的开发工作，该项目旨在[项目目标]。</p>
+                    </div>
+                    <div class="featured-item">
+                        <h3>出席行业研讨会</h3>
+                        <p>近期，受邀出席了[研讨会名称]行业研讨会，在会上分享了专业见解和经验。</p>
+                    </div>
+                    <div class="featured-item">
+                        <h3>团队培训计划</h3>
+                        <p>制定了团队培训计划，旨在提升团队成员的工作技能和专业素养。</p>
+                    </div>
                 </div>
             </div>
             
@@ -164,6 +200,10 @@
                     <div class="featured-item">
                         <h3>行业趋势分析</h3>
                         <p>文章内容：深入分析了当前行业的发展趋势和未来发展方向。</p>
+                    </div>
+                    <div class="featured-item">
+                        <h3>案例研究分享</h3>
+                        <p>文章内容：分享了[案例名称]案例研究，从实践中总结经验和教训。</p>
                     </div>
                 </div>
             </div>
