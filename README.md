@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -6,20 +7,35 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: '微软雅黑', sans-serif;
+            line-height: 1.8;
+            background: #f5f5f5;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            box-sizing: border-box;
+            display: flex;
+            gap: 30px;
         }
         header {
-            background: #333;
+            background: linear-gradient(to right, #c0392b, #e67e22);
             color: white;
-            padding: 20px 0;
+            padding: 40px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             text-align: center;
+        }
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+        nav {
+            background: rgba(0,0,0,0.1);
+            padding: 15px 0;
+            margin-top: 20px;
         }
         nav ul {
             list-style: none;
@@ -27,6 +43,7 @@
             margin: 0;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
         nav ul li {
             margin: 0 15px;
@@ -35,184 +52,204 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav ul li a:hover {
+            background: rgba(255,255,255,0.2);
         }
         .content-block {
-            margin: 20px 0;
+            background: white;
+            margin: 25px 0;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
         }
         .news-scroll {
-            height: 40px;
+            height: 50px;
             overflow: hidden;
-            white-space: nowrap;
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin: 10px 0;
+            position: relative;
+            background: #fff;
+            border-radius: 8px;
+            margin: 20px 0;
         }
         .news-scroll ul {
-            display: inline-block;
-            animation: scroll 30s linear infinite;
-            padding: 0;
+            position: absolute;
+            white-space: nowrap;
+            padding: 15px 0;
             margin: 0;
-            list-style: none;
+            animation: scroll 25s linear infinite;
         }
         .news-scroll li {
             display: inline-block;
-            margin-right: 20px;
+            margin-right: 50px;
+            font-size: 16px;
+        }
+        .news-scroll a {
+            color: #e74c3c;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .news-scroll a:hover {
+            color: #c0392b;
+            text-decoration: underline;
         }
         @keyframes scroll {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
-        footer {
-            background: #f8f8f8;
-            padding: 20px 0;
-            text-align: center;
-            margin-top: 40px;
-            color: #666;
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
         }
         .featured-item {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            width: calc(33.33% - 10px);
-            float: left;
-            margin-right: 10px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s;
+            border: 1px solid #eee;
         }
-        .featured-item:nth-child(3n) {
-            margin-right: 0;
+        .featured-item:hover {
+            transform: translateY(-5px);
         }
         .featured-item img {
             width: 100%;
-            height: 150px;
+            height: 180px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
         }
-        .article-block {
-            overflow: hidden;
-            clear: both;
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 40px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+        h2 {
+            color: #e67e22;
+            border-left: 5px solid #c0392b;
+            padding-left: 15px;
+            margin: 25px 0;
+        }
+        /* 新增侧边栏样式 */
+        .sidebar {
+            width: 300px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+        .weather-module {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 8px;
+        }
+        .weather-module h3 {
+            margin: 0 0 10px;
+        }
+        .weather-module p {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>中国金隆之窗</h1>
+        <nav>
+            <ul>
+                <li><a href="#profile">个人简介</a></li>
+                <li><a href="#skills">核心能力</a></li>
+                <li><a href="#projects">项目成果</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
-        <header>
-            <h1>中国金隆之窗</h1>
-            <nav>
+        <!-- 左侧栏 -->
+        <aside class="sidebar">
+            <div class="news-scroll">
                 <ul>
-                    <li><a href="#profile">金隆简介</a></li>
-                    <li><a href="#worklife">金隆动态</a></li>
-                    <li><a href="#honor">个人荣誉</a></li>
-                    <li><a href="#dynamic">工作生活</a></li>
-                    <li><a href="#news">今日要闻</a></li>
-                    <li><a href="#knowledge">知识信息</a></li>
-                </ul>
-            </nav>
-        </header>
-        
-        <div class="news-scroll" id="news">
-            <h2>今日要闻</h2>
-            <div class="scroll-container">
-                <ul>
-                    <li><a href="https://example.com/news1">新闻1：行业动态更新</a></li>
-                    <li><a href="https://example.com/news2">新闻2：技术进展分享</a></li>
-                    <li><a href="https://example.com/news3">新闻3：行业新政策发布</a></li>
-                    <li><a href="https://example.com/news4">新闻4：行业新技术应用</a></li>
-                    <li><a href="https://example.com/news5">新闻5：行业新趋势解读</a></li>
+                    <li><a href="http://example.com/pm" target="_blank">🔥 2025年项目管理趋势报告发布</a></li>
+                    <li><a href="http://example.com/agile" target="_blank">🌟 敏捷开发与项目管理结合新方法</a></li>
+                    <li><a href="http://example.com/remote" target="_blank">🚀 远程团队管理工具推荐</a></li>
+                    <li><a href="http://example.com/risk" target="_blank">⚠️ 项目风险管理最佳实践</a></li>
                 </ul>
             </div>
-        </div>
-        
-        <main>
+            <div class="weather-module">
+                <h3>今日天气</h3>
+                <p>北京：晴，15°C - 25°C</p>
+                <p>空气质量：优</p>
+                <p>湿度：45%</p>
+            </div>
+        </aside>
+        <!-- 主内容区 -->
+        <main style="flex-grow: 1;">
+            <!-- 个人简介模块 -->
             <div class="content-block" id="profile">
                 <h2>个人简介</h2>
-                <div class="featured-item">
-                    <img src="https://picsum.photos/800/400" alt="个人照片">
-                    <h3>金隆</h3>
-                    <p>出生于[出生日期]，毕业于[毕业院校]。在[工作行业]领域拥有丰富的工作经验。</p>
-                </div>
-            </div>
-            
-            <div class="content-block" id="worklife">
-                <h2>工作生活</h2>
-                <div class="article-block">
+                <div class="featured-grid">
                     <div class="featured-item">
-                        <img src="https://picsum.photos/800/400?random=1" alt="工作生活照">
-                        <h3>工作日常</h3>
-                        <p>在工作中，我专注于[工作领域]，努力提升专业能力，为工作做出贡献。</p>
+                        <img src="https://picsum.photos/800/400?grayscale" alt="专业形象照">
+                        <h3>金隆 | 项目管理专家</h3>
+                        <p>🔹 大连工业大学艺术设计硕士<br>
+                           🔹 国家级项目管理认证（PMP）<br>
+                           🔹 艺术设计与项目管理领域专家<br>
+                           🔹 10年项目管理与团队协作经验</p>
                     </div>
                     <div class="featured-item">
-                        <img src="https://picsum.photos/800/400?random=2" alt="工作生活照">
-                        <h3>生活点滴</h3>
-                        <p>在生活中，我喜欢阅读和旅行，这些经历使我不断成长和进步。</p>
-                    </div>
-                    <div class="featured-item">
-                        <img src="https://picsum.photos/800/400?random=3" alt="工作生活照">
-                        <h3>团队合作</h3>
-                        <p>我相信团队的力量，与同事携手共同完成项目，创造更多价值。</p>
+                        <h3>专业领域</h3>
+                        <p>项目规划与执行 | 团队协作与沟通 | 风险管理 | 时间与成本控制 | 设计项目交付</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="content-block" id="honor">
-                <h2>个人荣誉</h2>
-                <div class="article-block">
+            <!-- 核心能力模块 -->
+            <div class="content-block" id="skills">
+                <h2>核心能力</h2>
+                <div class="featured-grid">
                     <div class="featured-item">
-                        <h3>2025年度行业创新奖</h3>
-                        <p>在[项目名称]项目中，凭借出色的创新能力和专业技能，荣获2025年度行业创新奖。</p>
+                        <h3>📊 项目规划</h3>
+                        <p>• 制定清晰的项目目标与里程碑<br>
+                           • 使用甘特图进行任务分解<br>
+                           • 确保资源分配合理高效</p>
                     </div>
                     <div class="featured-item">
-                        <h3>2024年度优秀员工</h3>
-                        <p>在公司评选中，被评为2024年度优秀员工，为公司的发展做出突出贡献。</p>
-                    </div>
-                    <div class="featured-item">
-                        <h3>2023年度优秀论文奖</h3>
-                        <p>撰写的论文《[论文标题]》在行业学术会议中荣获2023年度优秀论文奖。</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="content-block" id="dynamic">
-                <h2>工作动态</h2>
-                <div class="article-block">
-                    <div class="featured-item">
-                        <h3>参与[项目名称]项目</h3>
-                        <p>目前正参与[项目名称]项目的开发工作，该项目旨在[项目目标]。</p>
-                    </div>
-                    <div class="featured-item">
-                        <h3>出席行业研讨会</h3>
-                        <p>近期，受邀出席了[研讨会名称]行业研讨会，在会上分享了专业见解和经验。</p>
-                    </div>
-                    <div class="featured-item">
-                        <h3>团队培训计划</h3>
-                        <p>制定了团队培训计划，旨在提升团队成员的工作技能和专业素养。</p>
+                        <h3>👥 团队协作</h3>
+                        <p>• 建立高效的跨职能团队<br>
+                           • 使用敏捷开发提升团队效率<br>
+                           • 定期组织项目复盘与优化</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="content-block" id="knowledge">
-                <h2>个人知识</h2>
-                <div class="article-block">
+            <!-- 项目成果模块 -->
+            <div class="content-block" id="projects">
+                <h2>代表项目</h2>
+                <div class="featured-grid">
                     <div class="featured-item">
-                        <h3>技术专题文章</h3>
-                        <p>文章内容：详细介绍了[技术领域]的前沿知识和实际应用案例。</p>
+                        <img src="https://picsum.photos/800/400?tech" alt="智慧城市项目">
+                        <h3>大型展览设计项目</h3>
+                        <p>• 项目周期：2022-2023<br>
+                           • 核心技术：项目管理+设计创新<br>
+                           • 成效：客户满意度达95%</p>
                     </div>
                     <div class="featured-item">
-                        <h3>行业趋势分析</h3>
-                        <p>文章内容：深入分析了当前行业的发展趋势和未来发展方向。</p>
-                    </div>
-                    <div class="featured-item">
-                        <h3>案例研究分享</h3>
-                        <p>文章内容：分享了[案例名称]案例研究，从实践中总结经验和教训。</p>
+                        <img src="https://picsum.photos/800/400?ai" alt="医疗AI项目">
+                        <h3>品牌重塑项目</h3>
+                        <p>• 客户：某知名快消品牌<br>
+                           • 目标：品牌形象升级<br>
+                           • 成果：销售额增长20%</p>
                     </div>
                 </div>
             </div>
         </main>
-        
-        <footer>
-            <p>&copy; 2024 中国金隆. 版权所有</p>
-            <p>联系我们：contact@example.com</p>
-        </footer>
     </div>
+    <footer>
+        <p>© 2025 中国金隆创新研究院 版权所有</p>
+        <p>学术合作：research@jinlong.cn | 媒体联络：press@jinlong.cn</p>
+        <p>地址：浙江省杭州市西湖区云启中心A座</p>
+    </footer>
 </body>
 </html>
