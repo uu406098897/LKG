@@ -4,55 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>中国金隆之窗</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        /* 页头样式 */
-        .header {
-            background: linear-gradient(to right, #FF8000, #FFA500);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
+        body {
+            font-family: "微软雅黑", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
         }
-        /* 滚动新闻样式 */
-        .news-ticker {
-            background: #f8f9fa;
-            padding: 10px;
-            overflow: hidden;
-            height: 40px;
-            line-height: 40px;
-            white-space: nowrap;
-        }
-        .news-ticker span {
-            display: inline-block;
-            padding-right: 50px;
-        }
-        /* 主体内容 */
+
         .container {
-            margin-top: 20px;
+            width: 90%; /* 宽页面 */
+            max-width: 1400px; /* 最大宽度限制 */
+            margin: 0 auto;
+            overflow: hidden; /* 清除浮动 */
         }
-        /* 底部样式 */
-        .footer {
-            background: #333;
+
+        header {
+            background: linear-gradient(to right, #ff9900, #ffcc66); /* 橘色渐变 */
             color: white;
+            padding: 20px 0;
             text-align: center;
-            padding: 15px;
-            margin-top: 20px;
         }
-        /* 滚动天气 */
-        .weather-ticker {
-            overflow: hidden;
-            height: 50px;
-            white-space: nowrap;
-            padding: 10px;
-            background: #ececec;
-            font-size: 16px;
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>中国金隆之窗</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">今日动态</a></li>
+                    <li><a href="#">个人简介</a></li>
+                    <li><a href="#">工作成果</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main>
+               </main>
+        <!-- 底部 -->
+ <footer>
+            <p>浙江省杭州市西湖区... | 联系电话：... | 邮箱：...</p>
+        </footer>
+    </div>
+    <script>
+        // 可以在这里添加JavaScript代码
+    </script>
+</body>
+</html>
+
 
     <!-- 页头 -->
     <div class="header">中国金隆之窗</div>
