@@ -1,236 +1,177 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>中国金隆之窗</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- 引入外部CSS文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* 页头样式 */
+        .header {
+            background: linear-gradient(to right, #FF8000, #FFA500);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        /* 滚动新闻样式 */
+        .news-ticker {
+            background: #f5f5f5;
+            padding: 10px;
+            overflow: hidden;
+            height: 40px;
+            line-height: 40px;
+            white-space: nowrap;
+            border-bottom: 2px solid #ffa500;
+        }
+        .news-ticker span {
+            display: inline-block;
+            padding-right: 50px;
+        }
+        /* 滚动天气 */
+        .weather-ticker {
+            overflow: hidden;
+            height: 50px;
+            white-space: nowrap;
+            padding: 10px;
+            background: #ececec;
+            font-size: 16px;
+            border-bottom: 2px solid #ffa500;
+        }
+        /* 主体内容 */
+        .container {
+            margin-top: 20px;
+            max-width: 1400px;
+        }
+        .card {
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        /* 底部样式 */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-
 <body>
-    <div class="container">
-        <header>
-            <h1>中国金隆之窗</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">首页</a></li>
-                    <li><a href="#about">关于我们</a></li>
-                    <li><a href="#products">产品中心</a></li>
-                    <li><a href="#news">新闻动态</a></li>
-                    <li><a href="#contact">联系我们</a></li>
-                </ul>
-            </nav>
-        </header>
 
-        <main>
-            <section class="module" id="about">
-                <h2>关于我们</h2>
-                <div class="about-content">
-                    <img src="images/about.jpg" alt="公司图片" class="about-image">
-                    <p>
-                        中国金隆之窗是一家专注于金融科技领域的创新型企业。我们致力于为客户提供高效、安全、便捷的金融解决方案，涵盖投资理财、资产管理、风险控制等多个方面。我们的团队由一群经验丰富的金融专家和技术精英组成，不断探索金融科技的前沿，为客户创造更大的价值。
-                    </p>
-                </div>
-            </section>
+    <!-- 页头 -->
+    <div class="header">中国金隆之窗</div>
 
-            <section class="module" id="products">
-                <h2>产品中心</h2>
-                <div class="products-grid">
-                    <div class="product-item">
-                        <img src="images/product1.jpg" alt="产品1">
-                        <h3>智能投顾</h3>
-                        <p>基于大数据和人工智能的个性化投资组合推荐。</p>
-                    </div>
-                    <div class="product-item">
-                        <img src="images/product2.jpg" alt="产品2">
-                        <h3>量化交易平台</h3>
-                        <p>为专业投资者提供高效、稳定的量化交易工具。</p>
-                    </div>
-                    <div class="product-item">
-                        <img src="images/product3.jpg" alt="产品3">
-                        <h3>风险管理系统</h3>
-                        <p>全方位的风险监测、评估和预警，保障资产安全。</p>
-                    </div>
-                    <div class="product-item">
-                        <img src="images/product4.jpg" alt="产品4">
-                        <h3>区块链金融应用</h3>
-                        <p>探索区块链技术在金融领域的创新应用。</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="module" id="news">
-                <h2>新闻动态</h2>
-                <div class="news-container">
-                    <div class="news-item">
-                        <img src="images/news1.jpg" alt="新闻1">
-                        <h3>公司荣获“年度金融科技创新奖”</h3>
-                        <p>在近日举行的金融科技峰会上，中国金隆之窗凭借其卓越的创新能力和产品表现，荣获“年度金融科技创新奖”。</p>
-                        <a href="#">阅读更多</a>
-                    </div>
-                    <div class="news-item">
-                        <img src="images/news2.jpg" alt="新闻2">
-                        <h3>与知名投资机构达成战略合作</h3>
-                        <p>中国金隆之窗宣布与知名投资机构达成战略合作，共同推动金融科技领域的创新发展。</p>
-                        <a href="#">阅读更多</a>
-                    </div>
-                </div>
-            </section>
-             <section class="module" id="hot-news">
-                <h2>百度热搜</h2>
-                <ul id="baidu-hot-news"></ul>
-            </section>
-            <section class="module" id="weather">
-                <h2>主要城市天气</h2>
-                <div id="weather-container"></div>
-            </section>
-
-            <section class="module" id="contact">
-                <h2>联系我们</h2>
-                <div class="contact-info">
-                    <p>地址：浙江省杭州市西湖区...</p>
-                    <p>电话：...</p>
-                    <p>邮箱：...</p>
-                </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="您的姓名">
-                    <input type="email" placeholder="您的邮箱">
-                    <textarea placeholder="您的留言"></textarea>
-                    <button type="submit">提交</button>
-                </form>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2024 中国金隆之窗. All rights reserved.</p>
-        </footer>
+    <!-- 滚动新闻 -->
+    <div class="news-ticker">
+        <marquee id="news-marquee">加载中...</marquee>
     </div>
 
-    <script src="script.js"></script>
-    <!-- 引入外部JS文件 -->
+    <!-- 滚动天气 -->
+    <div class="weather-ticker">
+        <marquee id="weather-marquee">天气数据加载中...</marquee>
+    </div>
+
+    <!-- 主体内容 -->
+    <div class="container">
+        <div class="row">
+            <!-- 左侧6个模块 -->
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header">今日头条</div>
+                    <div class="card-body">最新国内外热点新闻...</div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">财经分析</div>
+                    <div class="card-body">股市、房产、经济动态...</div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">科技创新</div>
+                    <div class="card-body">人工智能、5G、芯片技术...</div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">生活服务</div>
+                    <div class="card-body">健康、教育、出行、房产...</div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">文化艺术</div>
+                    <div class="card-body">书画、历史、传统文化...</div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">体育新闻</div>
+                    <div class="card-body">世界杯、奥运会、NBA...</div>
+                </div>
+            </div>
+            
+            <!-- 右侧6个模块 -->
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header">国际观察</div>
+                    <div class="card-body">全球热点事件分析...</div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">社会民生</div>
+                    <div class="card-body">社会热点、政策解读...</div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">娱乐八卦</div>
+                    <div class="card-body">明星动态、影视综艺...</div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">教育资讯</div>
+                    <div class="card-body">高考、考研、留学政策...</div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">本地新闻</div>
+                    <div class="card-body">杭州、西湖区最新动态...</div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">旅游推荐</div>
+                    <div class="card-body">国内外旅游攻略...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        地址：浙江省杭州市西湖区 | 版权所有 © 2025 中国金隆之窗
+    </div>
+
+    <script>
+        // 模拟百度新闻数据
+        let newsData = [
+            "中国GDP增长超预期",
+            "AI技术突破，GPT-5发布",
+            "房价走势分析：哪些城市涨幅最大？",
+            "新能源车销量破纪录",
+            "2025年高考政策调整",
+            "杭州亚运会圆满落幕",
+            "全球气候变暖加剧，专家呼吁行动",
+            "比特币价格突破6万美元",
+            "ChatGPT新版本发布",
+            "中国航天新突破，月球基地计划启动"
+        ];
+        let newsHtml = newsData.map(news => `<span>${news}</span>`).join(" | ");
+        $("#news-marquee").html(newsHtml);
+
+        // 模拟天气数据
+        let citiesWeather = [
+            "北京：晴 8℃",
+            "上海：多云 12℃",
+            "广州：小雨 18℃",
+            "深圳：晴 20℃",
+            "杭州：阴 10℃",
+            "成都：小雨 11℃",
+            "西安：晴 9℃",
+            "重庆：多云 13℃",
+            "武汉：小雨 10℃",
+            "天津：晴 7℃"
+        ];
+        let weatherHtml = citiesWeather.map(weather => `<span>${weather}</span>`).join(" | ");
+        $("#weather-marquee").html(weatherHtml);
+    </script>
+
 </body>
-
 </html>
-/* 全局样式 */
-body {
-    font-family: "微软雅黑", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-.container {
-    width: 90%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* 头部样式 */
-header {
-    background: linear-gradient(to right, #ff9900, #ffcc66);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 3em;
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-/* 模块样式 */
-.module {
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.module h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #ff9900;
-    padding-bottom: 5px;
-}
-
-/* 关于我们 */
-.about-content {
-    display: flex;
-    align-items: center;
-}
-
-.about-image {
-    width: 300px;
-    margin-right: 20px;
-    border-radius: 5px;
-}
-
-/* 产品中心 */
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.product-item {
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.product-item img {
-    width: 100%;
-    max-height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-/* 新闻动态 */
-.news-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.news-item {
-    width: 48%;
-    /* 留一点空间给间距 */
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.news-item img {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-/* 联系我们 */
-.contact-info {
-    margin-bottom: 20px;
-}
-
-.contact
