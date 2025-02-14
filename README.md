@@ -56,9 +56,9 @@
             <nav>
                 <ul>
                     <li><a href="#">首页</a></li>
-                    <li><a href="#">今日动态</a></li>
-                    <li><a href="#">个人简介</a></li>
-                    <li><a href="#">工作成果</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">产品中心</a></li>
+                    <li><a href="#">新闻动态</a></li>
                     <li><a href="#">联系我们</a></li>
                 </ul>
             </nav>
@@ -77,120 +77,83 @@
     </script>
 </body>
 </html>
+<main>
+            <section class="module">
+                <h2>模块 1：公司简介</h2>
+                <p>这里是中国金隆之窗的详细介绍...</p>
+            </section>
+            <section class="module">
+                <h2>模块 2：核心业务</h2>
+                <p>详细介绍公司的核心业务范畴...</p>
+            </section>
+            <section class="module">
+                <h2>模块 3：产品展示</h2>
+                <p>展示公司的主要产品和服务...</p>
+            </section>
+            <section class="module">
+                <h2>模块 4：技术优势</h2>
+                <p>阐述公司的技术实力和竞争优势....</p>
+            </section>
+            <section class="module">
+                <h2>模块 5：团队风采</h2>
+                <p>介绍公司的核心团队成员和企业文化...</p>
+            </section>
+            <section class="module">
+                <h2>模块 6：合作伙伴</h2>
+                <p>列出公司的主要合作伙伴和客户...</p>
+            </section>
+            <section class="module">
+                <h2>模块 7：新闻资讯</h2>
+                <p>发布公司的最新新闻和行业动态...</p>
+            </section>
+            <section class="module">
+                <h2>模块 8：招贤纳士</h2>
+                <p>发布公司的招聘信息和人才理念...</p>
+            </section>
+            <section class="module">
+                <h2>模块 9：社会责任</h2>
+                <p>展示公司在社会公益方面的贡献...</p>
+            </section>
+            <section class="module">
+                <h2>模块 10：联系方式</h2>
+                <p>提供公司的详细联系方式和地址...</p>
+            </section>
+            <section class="module">
+                <h2>模块 11：在线留言</h2>
+                <p>设置一个在线留言表单，方便客户咨询...</p>
+            </section>
+            <section class="module">
+                <h2>模块 12：友情链接</h2>
+                <p>列出一些相关的友情链接...</p>
+            </section>
+        </main>
+        #baidu-hot-news {
+    height: 200px;/*设置高度*/
+    overflow: hidden; /* 溢出隐藏 */
+}
 
+#baidu-hot-news li{
+     height: 20px;
+}
+<div class="module">
+      <h2>主要城市天气</h2>
+      <div id="weather-container"></div>
+ </div>
 
-    <!-- 页头 -->
-    <div class="header">中国金隆之窗</div>
-
-    <!-- 滚动新闻 -->
-    <div class="news-ticker">
-        <marquee id="news-marquee">加载中...</marquee>
-    </div>
-
-    <!-- 滚动天气 -->
-    <div class="weather-ticker">
-        <marquee id="weather-marquee">天气数据加载中...</marquee>
-    </div>
-
-    <!-- 主体内容 -->
-    <div class="container">
-        <div class="row">
-            <!-- 左侧6个模块 -->
-            <div class="col-md-6">
-                <div class="card mb-3">
-                    <div class="card-header">今日头条</div>
-                    <div class="card-body">这里是热点新闻内容...</div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-header">财经分析</div>
-                    <div class="card-body">最新的财经动态...</div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-header">科技创新</div>
-                    <div class="card-body">人工智能、5G、芯片最新进展...</div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-header">生活服务</div>
-                    <div class="card-body">健康、教育、房产、交通...</div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-header">文化艺术</div>
-                    <div class="card-body">书画、历史、非遗文化...</div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-header">体育新闻</div>
-                    <div class="card-body">世界杯、奥运会、中超、NBA...</div>
-                </div>
-            </div>
-            
-            <!-- 右侧6个模块 -->
-            <div class="col-md-6">
-                <div class="card mb-3">
-                    <div class="card-header">国际观察</div>
-                    <div class="card-body">全球热点事件...</div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-header">社会民生</div>
-                    <div class="card-body">社会热点、政策分析...</div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-header">娱乐八卦</div>
-                    <div class="card-body">明星动态、电影综艺...</div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-header">教育资讯</div>
-                    <div class="card-body">高考、考研、留学动态...</div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-header">本地新闻</div>
-                    <div class="card-body">杭州、西湖区最新动态...</div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-header">旅游推荐</div>
-                    <div class="card-body">国内外旅游攻略...</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 底部 -->
-    <div class="footer">
-        地址：浙江省杭州市西湖区 | 版权所有 © 2025 中国金隆之窗
-    </div>
-
-    <script>
-        // 模拟百度新闻数据
-        let newsData = [
-            "中国GDP增长超预期",
-            "AI技术突破，GPT-5发布",
-            "房价走势分析：哪些城市涨幅最大？",
-            "新能源车销量破纪录",
-            "2025年高考政策调整",
-            "杭州亚运会圆满落幕",
-            "全球气候变暖加剧，专家呼吁行动",
-            "比特币价格突破6万美元",
-            "ChatGPT新版本发布",
-            "中国航天新突破，月球基地计划启动"
-        ];
-        let newsHtml = newsData.map(news => `<span>${news}</span>`).join(" | ");
-        $("#news-marquee").html(newsHtml);
-
-        // 模拟天气数据
-        let citiesWeather = [
-            "北京：晴 8℃",
-            "上海：多云 12℃",
-            "广州：小雨 18℃",
-            "深圳：晴 20℃",
-            "杭州：阴 10℃",
-            "成都：小雨 11℃",
-            "西安：晴 9℃",
-            "重庆：多云 13℃",
-            "武汉：小雨 10℃",
-            "天津：晴 7℃"
-        ];
-        let weatherHtml = citiesWeather.map(weather => `<span>${weather}</span>`).join(" | ");
-        $("#weather-marquee").html(weatherHtml);
-    </script>
-
-</body>
-</html>
+<script>
+    const city = "beijing,shanghai,guangzhou,shenzhen,hangzhou";
+        const apiKey = "在此填写你的API密钥";
+        const apiUrl = `https://devapi.qweather.com/v7/weather/now?location=${city}&key=${apiKey}&lang=zh&gzip=n`;
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+               console.info(data);
+               const wdata = data.now;
+               const weatherContainer = document.getElementById('weather-container');
+               for(let i in wdata){
+                   const cityWeather = document.createElement('div');
+                   cityWeather.innerHTML = `<strong>${i}</strong>: ${wdata[i]}`;
+                   weatherContainer.appendChild(cityWeather);
+               }
+            });
+</script>
